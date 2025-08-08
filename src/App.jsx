@@ -1,5 +1,5 @@
 import React from "react";
-
+import Header from "./Header";
 function App() {
   return (
     <div
@@ -8,7 +8,9 @@ function App() {
         minHeight:"100vw",
         width:"100vw"
       }}
-    ></div>
+    >
+      <Header />
+    </div>
   );
 }
 
