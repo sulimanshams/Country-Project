@@ -1,7 +1,9 @@
 import React from "react";
 import Header from "./Header";
+import QuizCard from "./QuizCard";
 function App() {
   return (
+    <>
     <div
       style={{
         background: "#343964",
@@ -11,6 +13,8 @@ function App() {
     >
       <Header />
     </div>
+    <QuizCard />
+    </>
   );
 }
 
