@@ -11,6 +11,7 @@ const QuizCard = ({ questionData }) => {
   };
        if(!questionData)return null; 
   return (
+    
     <Box sx={{
          backgroundColor: "#2c2c5a",
         borderRadius: 3,
@@ -49,7 +50,7 @@ const QuizCard = ({ questionData }) => {
                 <Typography variant="h6" mb={3}>
                     Which country does this flag {questionData.flag} belong to ?
                 </Typography>
-
+                console.log(questionData);
 
                 <Stack>
                     {questionData.options.map((option, index) => {
@@ -92,6 +93,7 @@ const QuizCard = ({ questionData }) => {
                 </Stack>
     </Box>
   );
+  
 };
 
 export default QuizCard;
