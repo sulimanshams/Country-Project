@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, Stack } from "@mui/material";
-import axios from "axios";
+// import axios from "axios";
 
 const QuizCard = ({ questionData }) => {
+ 
   const [selected, setSelected] = useState(null);
 
   const handleSelect = (index) => {
     setSelected(index);
   };
-
+       if(!questionData)return null; 
   return (
     <Box sx={{
          backgroundColor: "#2c2c5a",
@@ -20,8 +21,9 @@ const QuizCard = ({ questionData }) => {
     }}>
       <Stack direction="row" spacing={1} mb={3}>
         {[...Array(10)].map((_, i) => {
+          return(
           <Box
-            key={1}
+            key={i}
             sx={{
               width: 32,
               height: 32,
@@ -39,7 +41,8 @@ const QuizCard = ({ questionData }) => {
             }}
           >
             {i + 1}
-          </Box>;
+          </Box>
+           )
         })}
       </Stack>
 
@@ -50,6 +53,7 @@ const QuizCard = ({ questionData }) => {
 
                 <Stack>
                     {questionData.options.map((option, index) => {
+                      return(
                         <Button key={index} variant="contained" fullWidth  onClick={() => handleSelect(index)}
                         sx={{
                              backgroundColor:
@@ -69,7 +73,7 @@ const QuizCard = ({ questionData }) => {
                         }}          
                         >
                                 {option}
-                                {selected===index && {
+                                {selected===index && (
                                     <Box
                                     component="span"
                                     sx={{
@@ -81,8 +85,9 @@ const QuizCard = ({ questionData }) => {
                                     marginLeft: 1,
                                     }}
                                 />
-                                }}
+                                )}
                         </Button>
+                         )
                     })}
                 </Stack>
     </Box>

@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
-import QuizCard from "./QuizCard";
+// import QuizCard from "./QuizCard";
+import QuizAPI from "./QuizAPI";
 function App() {
   return (
     <>
@@ -13,7 +14,7 @@ function App() {
     >
       <Header />
     </div>
-    <QuizCard />
+    <QuizAPI />
     </>
   );
 }
