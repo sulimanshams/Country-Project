@@ -10,6 +10,7 @@ const QuizCard = ({ questionData }) => {
     setSelected(index);
   };
        if(!questionData)return null; 
+       console.log(questionData);
   return (
     
     <Box sx={{
@@ -50,7 +51,6 @@ const QuizCard = ({ questionData }) => {
                 <Typography variant="h6" mb={3}>
                     Which country does this flag {questionData.flag} belong to ?
                 </Typography>
-                console.log(questionData);
 
                 <Stack>
                     {questionData.options.map((option, index) => {
